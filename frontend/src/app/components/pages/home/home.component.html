@@ -1,0 +1,32 @@
+<ul>
+  <li *ngFor="let item of items">
+    <a routerLink="/item/{{item.id}}">
+      <img [src]="item.imageUrl" [alt]="item.name">
+      <div class="content">
+        <div class="name">
+          {{item.name}}
+        </div>
+        <span class="favorite {{item.favorite?'':'not'}}">
+          ❤
+        </span>
+        <div class="stars">
+          <star-rating [stars]="item.stars"/>
+        </div>
+        <div class="product-item-footer">
+          <div class="origins">
+            <span *ngFor="let origin of item.origins">
+              {{origin}}
+            </span>
+          </div>
+          <div class="cook-time">
+            <span>🕒</span>
+            {{item.cookTime}}
+          </div>
+          <div class="price">
+            {{item.price | currency}}
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
