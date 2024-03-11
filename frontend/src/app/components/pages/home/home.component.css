@@ -10,7 +10,7 @@ ul {
 li a {
   height: 22.5rem;
   width: 20rem;
-  border: 1px solid #495057;
+  border: 1px solid #ced4da;
   border-radius: 1rem;
   margin: 0.5rem;
   display: flex;
@@ -61,7 +61,7 @@ li a img {
 
 .origins span{
   border-radius: 2rem;
-  background-color: whitesmoke;
+  background-color: aliceblue;
   display: inline-block;
   font-size: 0.8rem;
   color: black;

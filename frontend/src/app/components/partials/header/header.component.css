@@ -1,28 +1,28 @@
 header {
   position: relative;
-  background: #212529;
+  background: white;
   padding: 0;
-  border-bottom: 1px solid #343a40;
+  border-bottom: 1px solid #ced4da;
 }
 
 a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
 a:hover {
-  background: #343a40;
-  color: white;
+  background: #e9ecef;
+  color: black;
   cursor: pointer;
-  border-bottom: 1px solid #495057;
+  /* border-bottom: 1px solid #e9ecef; */
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .h-menu:hover {
-  background: #343a40;
-  color: white;
+  background: #e9ecef;
+  color: black;
   cursor: pointer;
-  border-bottom: 1px solid #495057;
+  /* border-bottom: 1px solid #ced4da; */
   border-radius: 0.5rem 0.5rem 0 0;
 
 }
@@ -64,14 +64,14 @@ a span {
 .menu {
   position: absolute;
   z-index: 1;
-  background: #343a40;
+  background: #e9ecef;
   display: none;
-  border-top: 1px solid #495057;
+  /* border-top: 1px solid #e9ecef; */
   border-radius: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .menu-container:hover .h-menu {
-  background: #343a40;
+  background: #e9ecef;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
@@ -80,7 +80,7 @@ a span {
 }
 
 .menu-container .menu a:hover {
-  background: #495057;
+  background: #dee2e6;
 }
 
 .menu a {
