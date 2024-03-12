@@ -1,5 +1,4 @@
-
-export const sample_foods: any[] = [
+export const sample_foods: unknown[] = [
   {
     id: '1',
     name: 'Pizza Pepperoni',
@@ -66,9 +65,9 @@ export const sample_foods: any[] = [
     imageUrl: 'assets/food-6.jpg',
     tags: ['FastFood', 'Pizza', 'Lunch'],
   },
-];
+]
 
-export const sample_tags: any[] = [
+export const sample_tags: unknown[] = [
   { name: 'All', count: 6 },
   { name: 'FastFood', count: 4 },
   { name: 'Pizza', count: 2 },
@@ -77,21 +76,4 @@ export const sample_tags: any[] = [
   { name: 'Hamburger', count: 1 },
   { name: 'Fry', count: 1 },
   { name: 'Soup', count: 1 },
-]
-
-export const sample_users: any[] = [
-  {
-    name: "John Doe",
-    email: "john@gmail.com",
-    password: "1234",
-    address: "Bangkok",
-    isAdmin: true
-  },
-  {
-    name: "Jane Doe",
-    email: "jane@gmail.com",
-    password: "1234",
-    address: "Japan",
-    isAdmin: false
-  }
 ]

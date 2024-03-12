@@ -1,28 +1,17 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
-import express from "express";
-import cors from "cors";
-import foodRouter from "./routers/food.router";
-import userRouter from './routers/user.router';
-import { dbConnect } from './configs/database.config';
-dbConnect();
+import express from 'express';
+import cors from 'cors';
 
 const app = express();
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:4200"],
+    origin: ['http://localhost:4200']
 }));
 
-app.get("/", (req, res) => {
-  res.send("Server is running!");
+app.get('/', (req, res) => {
+    res.send('Hello from the server!');
 });
-
-app.use("/api/foods", foodRouter);
-app.use("/api/users", userRouter);
 
 const port = 5000;
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 });
-
