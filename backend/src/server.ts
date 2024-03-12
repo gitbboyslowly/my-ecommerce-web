@@ -8,7 +8,7 @@ app.use(cors({
 }));
 
 app.get('/', (req, res) => {
-    res.send('Hello from the server!');
+    res.send('Server is running! 1234');
 });
 
 const port = 5000;
