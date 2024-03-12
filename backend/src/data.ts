@@ -1,4 +1,4 @@
-export const sample_foods: unknown[] = [
+export const sample_foods: any[] = [
   {
     id: '1',
     name: 'Pizza Pepperoni',
@@ -67,7 +67,7 @@ export const sample_foods: unknown[] = [
   },
 ]
 
-export const sample_tags: unknown[] = [
+export const sample_tags: any[] = [
   { name: 'All', count: 6 },
   { name: 'FastFood', count: 4 },
   { name: 'Pizza', count: 2 },
