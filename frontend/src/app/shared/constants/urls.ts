@@ -1,7 +1,4 @@
-import { environment } from "../../../environments/environment";
-console.log(environment.production);
-
-const BASE_URL = environment.apiUrl;
+const BASE_URL = "http://localhost:5000";
 
 export const FOODS_URL = `${BASE_URL}/api/foods`;
 export const FOODS_TAGS_URL = `${FOODS_URL}/tags`;
