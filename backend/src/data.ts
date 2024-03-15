@@ -65,7 +65,7 @@ export const sample_foods: any[] = [
     imageUrl: 'assets/food-6.jpg',
     tags: ['FastFood', 'Pizza', 'Lunch'],
   },
-]
+];
 
 export const sample_tags: any[] = [
   { name: 'All', count: 6 },
@@ -76,4 +76,21 @@ export const sample_tags: any[] = [
   { name: 'Hamburger', count: 1 },
   { name: 'Fry', count: 1 },
   { name: 'Soup', count: 1 },
-]
+];
+
+export const sample_users: any[] = [
+  {
+    name: "John Doe",
+    email: "john@gmail.com",
+    password: "1234",
+    address: "japan",
+    isAdmin: true
+  },
+  {
+    name: "Jane Doe",
+    email: "jane@gmail.com",
+    password: "1234",
+    address: "bangkok",
+    isAdmin: false
+  }
+];
