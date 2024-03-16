@@ -3,31 +3,20 @@
     <app-title title="Sing in"></app-title>
 
     <form [formGroup]="signForm" (ngSubmit)="submit()">
-      <div class="input-container">
-        <label>Email</label>
-        <div>
-          <input type="email" placeholder="Email" formControlName="email"/>
-        </div>
 
-        <div class="error-list" *ngIf="formCtrl.email.errors && isSubmitted">
-          <div *ngIf="formCtrl.email.errors.required">Should not be empty</div>
-          <div *ngIf="formCtrl.email.errors.email">Email is not correct</div>
-        </div>
-      </div>
-      <div class="input-container">
-        <label>Password</label>
-        <div>
-          <input type="password" placeholder="Password" formControlName="password"/>
-        </div>
+      <text-input
+      [control]="formCtrl.email"
+      [showErrorsWhen]="isSubmitted"
+      type="email"
+      label="Email"></text-input>
 
-        <div class="error-list" *ngIf="formCtrl.password.errors && isSubmitted">
-          <div *ngIf="formCtrl.password.errors.required">Should not be empty</div>
-        </div>
-      </div>
-      <div class="button">
-        <!-- <button type="submit" [disabled]="!signForm.valid">Sign in</button> -->
-        <button type="submit">Sign in</button>
-      </div>
+      <text-input
+      [control]="formCtrl.password"
+      [showErrorsWhen]="isSubmitted"
+      type="password"
+      label="Password"></text-input>
+
+      <default-button text="Sign in"></default-button>
     </form>
 
   </div>
