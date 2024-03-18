@@ -7,16 +7,10 @@
 }
 
 .details {
-  width: 28rem;
+  width: 25rem;
 }
 
-from {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.sign-up {
+.sign-in {
   display: flex;
   justify-content: center;
   align-items: center;

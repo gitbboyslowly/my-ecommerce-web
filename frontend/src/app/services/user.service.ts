@@ -3,8 +3,9 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/models/User';
 import { IUserSignIn } from '../shared/interfaces/IUserSignIn';
 import { HttpClient } from '@angular/common/http';
-import { USERS_SIGN_IN_URL } from '../shared/constants/urls';
+import { USERS_SIGN_IN_URL, USERS_SIGN_UP_URL } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
+import { IUserSignUp } from '../shared/interfaces/IUserSignUp';
 
 const USER_KEY = 'User';
 @Injectable({
@@ -26,12 +27,31 @@ export class UserService {
           this.serUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
-            `Welcome to Foodmine ${user.name}!`,
+            `Welcome to DevBoy Food ${user.name}!`,
             'Sign In Successful'
           )
         },
         error: (errorResponse) => {
           this.toastrService.error(errorResponse.error.message, 'Sign In Failed')
+        }
+      })
+    )
+  }
+
+  signUp(userSingUp: IUserSignUp): Observable<User>{
+    return this.http.post<User>(USERS_SIGN_UP_URL, userSingUp).pipe(
+      tap({
+        next: (user) => {
+          this.serUserToLocalStorage(user);
+          this.userSubject.next(user);
+          this.toastrService.success(
+            `Welcome to DevBoy Food ${user.name}!`,
+            'Sign Up Successful'
+          )
+        },
+        error: (errorResponse) => {
+          this.toastrService.error(errorResponse.error,
+            'Sign Up Failed')
         }
       })
     )

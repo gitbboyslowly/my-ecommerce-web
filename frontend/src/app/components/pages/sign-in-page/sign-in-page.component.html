@@ -17,6 +17,13 @@
       label="Password"></text-input>
 
       <default-button text="Sign in"></default-button>
+
+      <div class="sign-up">
+        Don't have an account? &nbsp;
+        <a routerLink="/sign-up" [queryParams]="{returnUrl: returnUrl}">
+          Sign Up Here
+        </a>
+      </div>
     </form>
 
   </div>
