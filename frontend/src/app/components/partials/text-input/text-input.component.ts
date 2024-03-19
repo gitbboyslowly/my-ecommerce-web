@@ -12,7 +12,7 @@ export class TextInputComponent {
   @Input() label!: string;
   @Input() type: 'text' | 'password' | 'email' = 'text';
 
-  get formControl() {
+  get formCtrl() {
     return this.control as FormControl;
   }
 }

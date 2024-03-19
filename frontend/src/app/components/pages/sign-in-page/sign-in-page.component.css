@@ -21,3 +21,17 @@ from {
   justify-content: center;
   align-items: center;
 }
+
+.sign-in-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  color: green;
+  opacity: 0.8;
+}
+
+.sign-in-value:hover {
+  opacity: 1;
+  cursor: pointer;
+}
