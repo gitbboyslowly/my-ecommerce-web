@@ -20,6 +20,10 @@ export class UserService {
     this.userObservable = this.userSubject.asObservable();
   }
 
+  public get currentUser(): User {
+    return this.userSubject.value;
+  }
+
   signIn(userSignIn: IUserSignIn): Observable<User> {
     return this.http.post<User>(USERS_SIGN_IN_URL, userSignIn).pipe(
       tap({
