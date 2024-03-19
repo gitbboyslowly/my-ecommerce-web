@@ -12,7 +12,7 @@ import { TagsComponent } from './components/partials/tags/tags.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignInPageComponent } from './components/pages/sign-in-page/sign-in-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
@@ -22,6 +22,8 @@ import { InputValidationComponent } from './components/partials/input-validation
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
 import { DefaultButtonComponent } from './components/partials/default-button/default-button.component';
 import { SignUpPageComponent } from './components/pages/sign-up-page/sign-up-page.component';
+import { LoadingComponent } from './components/partials/loading/loading.component';
+import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { SignUpPageComponent } from './components/pages/sign-up-page/sign-up-pag
     InputValidationComponent,
     TextInputComponent,
     DefaultButtonComponent,
-    SignUpPageComponent
+    SignUpPageComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,9 @@ import { SignUpPageComponent } from './components/pages/sign-up-page/sign-up-pag
       newestOnTop: false
     })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
