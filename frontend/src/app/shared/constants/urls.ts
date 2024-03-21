@@ -8,3 +8,6 @@ export const FOODS_BY_ID_URL = `${FOODS_URL}/`;
 
 export const USERS_SIGN_IN_URL = `${BASE_URL}/api/users/sign-in`;
 export const USERS_SIGN_UP_URL = `${BASE_URL}/api/users/sign-up`;
+
+export const ORDER_URL = `${BASE_URL}/api/orders`;
+export const ORDER_CREATE_URL = `${ORDER_URL}/create`;

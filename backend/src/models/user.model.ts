@@ -7,7 +7,6 @@ export interface User {
     name: string;
     address: string;
     isAdmin: boolean;
-    token?: string;
 }
 
 const userSchema = new Schema<User>(
@@ -16,8 +15,7 @@ const userSchema = new Schema<User>(
         email: { type: String, required: true, unique: true },
         password: { type: String, required: true },
         address: { type: String, required: true },
-        isAdmin: { type: Boolean, required: true },
-        token: { type: String, required: false}
+        isAdmin: { type: Boolean, required: true }
     },
     {
         toJSON: {
