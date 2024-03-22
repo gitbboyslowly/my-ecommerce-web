@@ -12,3 +12,4 @@ export const USERS_SIGN_UP_URL = `${BASE_URL}/api/users/sign-up`;
 export const ORDER_URL = `${BASE_URL}/api/orders`;
 export const ORDER_CREATE_URL = `${ORDER_URL}/create`;
 export const ORDER_NEW_FOR_CURRENT_USER_URL = `${ORDER_URL}/newOrderForCurrentUser`;
+export const ORDER_PAY_URL = `${ORDER_URL}/pay`;

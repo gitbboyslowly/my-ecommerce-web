@@ -5,8 +5,8 @@
       <text-input [control]="formCtrl.name" label="Name"></text-input>
       <text-input [control]="formCtrl.address" label="Address"></text-input>
     </form>
+    <order-items-list [order]="order"></order-items-list>
   </div>
-  <order-items-list [order]="order"></order-items-list>
 
   <div class="map">
     <app-title
