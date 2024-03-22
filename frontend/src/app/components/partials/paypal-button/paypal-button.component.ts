@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Order } from '../../../shared/models/Order';
 import { OrderService } from '../../../services/order.service';
 import { CartService } from '../../../services/cart.service';
@@ -13,7 +13,7 @@ declare var paypal: any;
   templateUrl: './paypal-button.component.html',
   styleUrl: './paypal-button.component.css'
 })
-export class PaypalButtonComponent {
+export class PaypalButtonComponent implements OnInit {
   @Input() order!: Order;
   @ViewChild('paypal', { static: true }) paypalElement!: ElementRef;
 
@@ -24,7 +24,7 @@ export class PaypalButtonComponent {
     private toastrService: ToastrService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const self = this;
     paypal
       .Buttons({
@@ -33,7 +33,7 @@ export class PaypalButtonComponent {
             purchase_units: [
               {
                 amount: {
-                  currency_code: 'CAD',
+                  currency_code: 'THB',
                   value: self.order.totalPrice,
                 },
               },
@@ -46,9 +46,9 @@ export class PaypalButtonComponent {
           this.order.paymentId = payment.id;
           self.orderService.pay(this.order).subscribe(
             {
-              next: (orderId) => {
+              next: (order) => {
                 this.cartService.clearCart();
-                this.router.navigateByUrl('/track/' + orderId);
+                this.router.navigateByUrl('/track/' + order.id);
                 this.toastrService.success(
                   'Payment Saved Successfully',
                   'Success'

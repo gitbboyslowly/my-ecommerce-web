@@ -24,7 +24,7 @@ resetLingText="Go To Homepage"></app-not-found>
         </select>
       </div>
       <div>
-        {{cartItem.price | currency}}
+        {{cartItem.price | currency:"THB":"symbol"}}
       </div>
       <div>
         <button class="remove-button" (click)="removeFromCart(cartItem)">
@@ -36,7 +36,7 @@ resetLingText="Go To Homepage"></app-not-found>
   <div class="checkout">
     <div>
       <div class="foods-count">{{cart.totalCount}}</div>
-      <div class="total-price">{{cart.totalPrice | currency}}</div>
+      <div class="total-price">{{cart.totalPrice | currency:"THB":"symbol"}}</div>
     </div>
 
     <a routerLink="/checkout">Proceed to Checkout</a>
