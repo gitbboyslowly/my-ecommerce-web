@@ -60,9 +60,7 @@
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": [
-              "src/assets/paypal.js"
-            ],
+            "scripts": [],
             "allowedCommonJsDependencies": [
               "leaflet"
             ]
