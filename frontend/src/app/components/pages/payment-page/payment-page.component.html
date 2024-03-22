@@ -11,8 +11,8 @@
         <span>{{order.address}}</span>
       </div>
     </div>
+    <order-items-list [order]="order"></order-items-list>
   </div>
-  <order-items-list [order]="order"></order-items-list>
 
   <div class="map">
     <app-title
@@ -23,6 +23,7 @@
 
   <div class="buttons-container">
     <div class="buttons">
+      <paypal-button [order]="order"></paypal-button>
     </div>
   </div>
 </div>
